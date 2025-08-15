@@ -1,0 +1,63 @@
+/* Hide text content until Webflow fonts are ready */
+html.wf-loading body {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Show content once fonts are active or fall back */
+html.wf-active body,
+html.wf-inactive body {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Globally forces images to fill grid cells */
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+  
+/* Stops Safari from changing style of phone number. */
+  a[href^=tel] {
+   text-decoration:inherit;
+   color: inherit;
+}
+
+/* Stop form fields from resizing */
+  textarea {
+    resize: none;
+  }
+
+
+/* Roobert alternative 'g' character */
+body {
+  font-feature-settings: "ss02" 1;
+}
+
+
+/* Force all links to have a pointer */
+.w-inline-block,
+.w-inline-block * {
+  cursor: pointer;
+}
+
+
+/* Fully suppress native iOS video controls */
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
+/* Sets media images and videos to opacity 0 on load */
+.media-item {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  will-change: opacity, transform;
+}
