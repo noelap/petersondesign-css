@@ -1,0 +1,30 @@
+{
+  "name": "petersondesign-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minify:head": "node build/minify-head.js",
+    "minify:footer": "node build/minify-footer.js",
+    "watch:head": "chokidar \"in-development/head-styles.css\" -c \"npm run minify:head\"",
+    "watch:footer": "chokidar \"in-development/footer-styles.css\" -c \"npm run minify:footer\"",
+    "watch:all": "npm-run-all --parallel watch:head watch:footer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noelap/petersondesign-css.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/noelap/petersondesign-css/issues"
+  },
+  "homepage": "https://github.com/noelap/petersondesign-css#readme",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "csso": "^5.0.5",
+    "npm-run-all": "^4.1.5"
+  }
+}
